@@ -1,0 +1,456 @@
+@import "~bootstrap"
+
+html *
+    outline: none
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+a
+    text-decoration: none
+    display: block
+
+a:hover
+    text-decoration: none
+
+ul li
+    list-style-type: none
+
+img, svg
+    vertical-align: middle
+    max-width: 100%
+
+input, textarea
+    -webkit-border-radius: 0
+    -webkit-appearance: none
+
+button
+    outline: 0!important
+//font-family: none
+//font-size: 0
+//line-height: 0
+
+.h1, .h2, .h3, .h4, .h5, .h6, p
+    margin: 0
+
+
+@font-face
+    font-family: 'Tobi-Black'
+    src: url("/assets/Tobi-Black.woff") format("woff"), url("/assets/Tobi-Black.woff2") format("woff2")
+@font-face
+    font-family: 'Tobi-Regular'
+    src: url("/assets/Tobi.woff") format("woff"), url("/assets/Tobi.woff2") format("woff2")
+@font-face
+    font-family: 'Tobi-Light'
+    src: url("/assets/Tobi-Light.woff") format("woff"), url("/assets/Tobi-Light.woff2") format("woff2")
+@font-face
+    font-family: 'RobotoCondensed-Light'
+    src: url("/assets/RobotoCondensed-Light.ttf") format("truetype"), url("/assets/RobotoCondensed-Light.ttf") format("truetype")
+@font-face
+    font-family: 'RobotoCondensed-Regular'
+    src: url("/assets/RobotoCondensed-Regular.ttf") format("truetype"), url("/assets/RobotoCondensed-Regular.ttf") format("truetype")
+@font-face
+    font-family: 'RobotoCondensed-Bold'
+    src: url("/assets/RobotoCondensed-Bold.ttf") format("truetype"), url("/assets/RobotoCondensed-Bold.ttf") format("truetype")
+@font-face
+    font-family: 'NotoSans-Bold'
+    src: url("/assets/NotoSans-Bold.ttf") format("truetype"), url("/assets/NotoSans-Bold.ttf") format("truetype")
+@font-face
+    font-family: 'NotoSans-Regular'
+    src: url("/assets/NotoSans-Regular.ttf") format("truetype"), url("/assets/NotoSans-Regular.ttf") format("truetype")
+
+.h1
+    font-family: 'Tobi-Regular', sans-serif
+    font-size: 36px
+    line-height: 42px
+    color: #FFE5B5
+    text-transform: uppercase
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4)
+    //@media screen and (max-width: 900px)
+    //    font-size: 36px
+    //    line-height: 42px
+
+.h2
+    font-family: 'Tobi-Regular', sans-serif
+    font-size: 24px
+    line-height: 28px
+    color: #FFE5B5
+    //@media screen and (max-width: 900px)
+    //    font-size: 12px
+    //    line-height: 14px
+
+.desc-modal
+    font-family: 'Tobi-Regular', sans-serif
+    font-size: 24px
+    line-height: 28px
+    color: #FFCB3E
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+    margin-bottom: 10px
+
+
+.p1
+    font-family: 'Tobi-Regular', sans-serif
+    font-size: 28px
+    line-height: 33px
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4)
+    color: #FCCC4B
+    -webkit-text-stroke: 1px  #662008
+
+.p2
+    font-family: 'NotoSans-Regular', sans-serif
+    font-size: 14px
+    line-height: 19px
+    color: #FFE5B5
+
+.p-step
+    font-family: 'Tobi-Regular', sans-serif
+    font-size: 48px
+    line-height: 56px
+    color: rgba(255, 221, 119, 1)
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4)
+
+
+.input-valid
+    position: relative
+    width: 293px
+    margin: 0 auto 25px
+    @media screen and (max-width: 700px)
+        width: 218px
+    .entryfield
+        padding: 16px 8px 16px 16px
+        border: 1px solid #FFDD76
+        box-sizing: border-box
+        border-radius: 8px
+        background-color: transparent
+        background-image: url("/assets/back_input.png")
+        background-size: 100% 100%
+        background-repeat: no-repeat
+        background-position: center
+        width: 100%
+        transition: .5s
+        box-shadow: 0 0 11px #F98D25
+        @media screen and (max-width: 700px)
+            width: 218px
+    .entryfield:-webkit-autofill
+        -webkit-background-color: transparent!important
+        -webkit-box-shadow: 0 0 0 0 transparent inset
+        color: #915D24!important
+        -webkit-text-fill-color: #915D24!important
+    .entryfield, .entryfield::placeholder
+        font-family: 'NotoSans-Regular', sans-serif
+        font-size: 19px
+        line-height: 26px
+        color: #FFD66D
+        letter-spacing: 0.01em
+        text-align: center
+    .entryfield::placeholder
+        color: rgba(255, 229, 181, 0.5)
+    .valid
+        border: 2px solid #4B941D
+    .invalid, .invalid-no-caption .invalid-response
+        border: 2px solid #D32829
+        box-shadow: 0 0 11px #D32829
+    .entryfield + p
+        position: relative
+        top: 0
+        margin-top: 0
+        max-height: 0
+    .invalid + p
+        margin-top: 5px
+        max-height: 50px
+    .invalid-response + p + p
+        position: relative
+        margin-top: 5px
+        max-height: 50px
+        opacity: 1
+        visibility: visible
+    p
+        font-family: 'NotoSans-Regular', sans-serif
+        font-size: 12px
+        line-height: 16px
+        letter-spacing: 0.02em
+        position: absolute
+        color: #D32829
+        top: 55px
+        left: 0
+        opacity: 0
+        visibility: hidden
+        transition: .5s
+        width: 100%
+    .invalid + p
+        opacity: 1
+        visibility: visible
+    .password-button
+        position: absolute
+        right: 18px
+        top: 30px
+        transform: translateY(-50%)
+        transition: .5s
+        opacity: 0
+        visibility: hidden
+        cursor: pointer
+    .password-button.view
+        opacity: 1
+        visibility: visible
+
+.already-account
+    margin: 13px auto 16px
+    width: fit-content
+.already-account, .already-account > span
+    font-family: 'NotoSans-Regular', sans-serif
+    font-size: 14px
+    line-height: 19px
+    color: #FFE5B5
+    white-space: pre-wrap
+    span
+        text-decoration: underline
+        cursor: pointer
+
+.box-check-ico
+    margin: 0 auto 15px
+    width: 285px
+    @media screen and (max-width: 700px)
+        width: 218px
+    p, a
+        font-family: 'NotoSans-Regular', sans-serif
+        font-size: 14px
+        line-height: 24px
+    p
+        color: #FFFAD6
+    a
+        color: #FFD66D
+        text-decoration: underline
+        display: inline
+.check-ico
+    margin-top: 4px
+    position: relative
+    cursor: pointer
+    input
+        position: absolute
+        z-index: -1
+        opacity: 0
+        -webkit-appearance: auto
+        left: 50%
+    span::before
+        content: ''
+        display: inline-block
+        width: 16px
+        height: 16px
+        margin-right: 16px
+        border: 2px solid #FFD66D
+        border-radius: 2px
+        flex: 0 0 16px
+.check-ico>input:checked+span::before
+    background-image: url("/assets/checkicon.svg")
+    background-repeat: no-repeat
+    background-position: 50%
+    background-size: contain
+    background-color: transparent
+    border: none
+
+.hero-button
+    z-index: 5
+    cursor: pointer
+    transition: .5s
+    position: relative
+    background: transparent
+    border: none
+    margin: 0 auto
+    width: fit-content
+    p
+        padding: 15px 50px
+        position: relative
+        z-index: 5
+    img
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        filter: drop-shadow(0px 0px 8px rgba(251, 198, 53, .5))
+        transition: .5s
+.hero-button:hover
+    img
+        filter: drop-shadow(0px 0px 8px rgba(251, 198, 53, 1))
+
+
+.hero-button:disabled
+    opacity: .8
+    cursor: auto
+    pointer-events: none
+    img
+        filter: drop-shadow(0px 0px 8px rgba(251, 198, 53, .2))
+
+#main
+    min-height: 100vh
+    background: #070507
+    position: relative
+    .back
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        video
+            height: 100%
+            width: 100%
+            object-fit: cover
+            @media (max-width: 1200px)
+                object-position: 60%
+            @media (max-width: 850px)
+                object-position: 50%
+                height: 580px
+        //video:first-of-type
+        //    @media (max-width: 850px)
+        //        display: none
+        //video:last-of-type
+        //    display: none
+        //    @media (max-width: 850px)
+        //        display: block
+    .container
+        min-height: calc(100vh - 81px)
+        width: 1160px
+        padding: 90px 0 0
+        position: relative
+        max-width: none
+        @media (max-width: 1200px)
+            width: 100%
+            padding: 40px 20px 0
+        .container-form
+            min-height: 650px
+            margin-bottom: 47px
+            @media (max-width: 850px)
+                width: auto
+            .logo
+                margin: 0 auto 270px
+                width: 324px
+                height: 290px
+                @media (max-width: 850px)
+                    width: 194px
+                    height: 174px
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: contain
+            form
+                text-align: center
+                .name-form
+                    color: #FFE5B5
+                    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+                    padding: 0 13px 10px
+                    position: relative
+                    width: 290px
+                    margin: 0 auto 45px
+                    background: radial-gradient(50% 26.25% at 50% 100%, rgba(249, 144, 37, 0.5) 0%, rgba(255, 220, 117, 0) 98.96%)
+                    img
+                        position: absolute
+                        bottom: -7px
+                        left: 0
+                        width: 100%
+                        height: auto
+                        filter: drop-shadow(0px 2px 5px #F98D25)
+        .steps
+            display: flex
+            justify-content: space-between
+            @media (max-width: 850px)
+                display: block
+            .step-desc
+                padding: 28px 46px 32px 16px
+                min-height: 133px
+                width: 379px
+                position: relative
+                display: flex
+                @media (max-width: 850px)
+                    width: 100%
+                    max-width: 400px
+                    margin: 0 auto
+                    padding: 28px 28px 32px 28px
+                img
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    object-fit: fill
+                    //filter: drop-shadow(0px 0px 11px rgba(249, 141, 37, 1))
+                img:first-of-type
+                    @media (max-width: 850px)
+                        display: none
+                img:nth-of-type(2)
+                    display: none
+                    @media (max-width: 850px)
+                        display: block
+                p
+                    position: relative
+                .p-step
+                    margin-right: 10px
+                .h2
+                    margin-bottom: 7px
+            .step-desc:last-child
+                width: 370px
+                @media (max-width: 850px)
+                    width: 100%
+                    max-width: 400px
+                    margin: 0 auto
+    footer
+        padding: 31px
+        position: relative
+        @media (max-width: 550px)
+            padding: 100px 20px 31px
+        .box-music
+            width: 62px
+            height: 62px
+            position: absolute
+            bottom: 10px
+            right: 16px
+            @media (max-width: 550px)
+                bottom: 70px
+            svg
+                position: absolute
+                top: 0
+                left: 0
+                cursor: pointer
+                transition: .5s
+        .mute
+            svg:first-of-type
+                opacity: 1
+            svg:last-child
+                opacity: 0
+        .music
+            svg:first-of-type
+                opacity: 0
+            svg:last-child
+                opacity: 1
+        .footer-link
+            margin: 0 auto
+            max-width: 515px
+        p, a
+            color: white
+            @media (max-width: 550px)
+                font-size: 10px
+                line-height: 14px
+
+.box-step
+    opacity: 0
+    visibility: hidden
+    overflow: hidden
+    max-height: 0
+    transition: .5s
+.step-active
+    opacity: 1
+    visibility: visible
+    max-height: 500px
+
+#login
+    display: none
+    .forgot-password
+        cursor: pointer
+        margin: 0 auto 32px
+        color: #BE9680
+        width: 293px
+        text-align: right
+        @media screen and (max-width: 700px)
+            width: 218px
+
+#reset, #updatepassword
+    display: none
